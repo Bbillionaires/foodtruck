@@ -1,0 +1,1 @@
+export default function ListingCard({title,meta,cta}:{title:string;meta:string;cta?:React.ReactNode}){return <article className="card"><h3 className="font-semibold">{title}</h3><p>{meta}</p>{cta}</article>}

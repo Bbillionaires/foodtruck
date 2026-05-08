@@ -1,0 +1,3 @@
+import type { Metadata } from 'next';
+export const metadata: Metadata = { title: 'Contact | Jacksonville Food Truck Network', description: 'Contact for Jacksonville FL food truck and vendor businesses.' };
+export default function Page(){return <main className="container-page"><h1 className="text-2xl font-bold mb-4">Contact</h1><div className="card"><form className='grid gap-2'><input className='rounded border p-2' placeholder='Name'/><input className='rounded border p-2' placeholder='Email'/><textarea className='rounded border p-2' placeholder='Message'></textarea><button className='btn w-fit'>Send</button></form></div></main>}
