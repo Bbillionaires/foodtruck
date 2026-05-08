@@ -1,0 +1,20 @@
+-- Supabase PostgreSQL schema
+create table profiles (id uuid primary key, email text unique not null, role text default 'vendor', created_at timestamptz default now());
+create table site_settings (id bigserial primary key, key text unique, value text, updated_at timestamptz default now());
+create table pages_content (id bigserial primary key, slug text unique, title text, body text, seo_title text, seo_description text, updated_at timestamptz default now());
+create table listings (id bigserial primary key, owner_id uuid references profiles(id), listing_title text not null, location_name text not null, area text, access_type text not null, price_cents int not null, commission_split_terms text, available_dates daterange, vendor_types_allowed text, food_truck_allowed boolean, tent_table_allowed boolean, power_available boolean, water_available boolean, restroom_access boolean, parking_details text, entry_instructions text, rules text, photos text[], status text default 'pending', created_at timestamptz default now());
+create table bookings (id bigserial primary key, listing_id bigint references listings(id), user_id uuid references profiles(id), access_type text, start_date date, end_date date, business_info jsonb, insurance_url text, permit_url text, disclaimer_accepted boolean not null default false, rules_accepted boolean not null default false, approval_status text default 'pending', total_cents int, platform_commission_cents int generated always as ((total_cents * 15) / 100) stored, stripe_payment_intent_id text, created_at timestamptz default now());
+create table food_trucks (id bigserial primary key, owner_id uuid references profiles(id), title text, mode text check (mode in ('rent','sale')), price_cents int, description text, status text default 'pending');
+create table coop_opportunities (id bigserial primary key, owner_id uuid references profiles(id), title text, terms text, dates text, status text default 'pending');
+create table promoters (id bigserial primary key, name text, phone text, email text, social_links text, areas text, dates_available text, promo_code_assigned text, compensation_notes text, agreement_accepted boolean, status text default 'pending');
+create table advertisers (id bigserial primary key, company_name text, slot_type text, price_cents int, start_date date, end_date date, invoice_status text default 'draft');
+create table coupons (id bigserial primary key, code text unique, description text, discount_type text, discount_value numeric, starts_at timestamptz, ends_at timestamptz, active boolean default true);
+create table promo_codes (id bigserial primary key, code text unique, usage_limit int, used_count int default 0, owner_type text, owner_id bigint);
+create table commissions (id bigserial primary key, source_type text, source_id bigint, gross_cents int, commission_cents int, net_cents int, recorded_at timestamptz default now());
+create table training_content (id bigserial primary key, category text, title text, content text, download_url text, published boolean default true);
+create table generic_submissions (id bigserial primary key, data jsonb, status text default 'new', admin_notes text, assigned_to text, created_at timestamptz default now());
+create table grease_submissions (like generic_submissions including all);
+create table financing_submissions (like generic_submissions including all);
+create table management_submissions (like generic_submissions including all);
+create table licensing_submissions (like generic_submissions including all);
+create table notifications_queue (id bigserial primary key, channel text, recipient text, payload jsonb, status text default 'queued', created_at timestamptz default now());
