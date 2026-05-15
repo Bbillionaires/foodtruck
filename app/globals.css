@@ -1,9 +1,46 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body { @apply bg-slate-50 text-slate-900; }
-.container-page { @apply mx-auto max-w-6xl px-4 py-8; }
-.card { @apply rounded-xl border border-slate-200 bg-white p-4 shadow-sm; }
-.btn { @apply rounded-lg bg-brand px-4 py-2 font-medium text-white hover:opacity-90; }
-.btn-secondary { @apply rounded-lg border border-brand px-4 py-2 font-medium text-brand; }
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply min-h-screen bg-amber-50 text-slate-950 antialiased;
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.22), transparent 34rem),
+    radial-gradient(circle at top right, rgba(10, 125, 83, 0.18), transparent 30rem),
+    linear-gradient(180deg, #fff7ed 0%, #f8fafc 42%, #ffffff 100%);
+}
+
+input,
+select,
+textarea {
+  @apply border-slate-200 bg-white text-slate-900 outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/10;
+}
+
+.container-page {
+  @apply mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply rounded-3xl border border-white/80 bg-white/90 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand/20 transition hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-brand/25 bg-white px-5 py-3 text-sm font-bold text-brand shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:bg-emerald-50;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full border border-amber-200 bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-amber-900;
+}
+
+.section-title {
+  @apply text-2xl font-black tracking-tight text-slate-950 md:text-3xl;
+}
+
