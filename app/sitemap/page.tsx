@@ -1,0 +1,3 @@
+import type { Metadata } from 'next';
+export const metadata: Metadata = { title: 'Sitemap | Jacksonville Food Truck Network', description: 'Sitemap for Jacksonville FL food truck and vendor businesses.' };
+export default function Page(){return <main className="container-page"><h1 className="text-2xl font-bold mb-4">Sitemap</h1><div className="card"><ul className='list-disc pl-5'><li>/</li><li>/locations</li><li>/trucks</li><li>/coop</li><li>/book</li><li>/training</li><li>/coupons</li><li>/advertising</li><li>/preferred-vendors</li><li>/promoter-signup</li><li>/contact</li><li>/terms</li><li>/admin</li></ul></div></main>}
