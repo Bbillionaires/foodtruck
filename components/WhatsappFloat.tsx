@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 
 export default function WhatsAppFloat() {
   const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '19045551212';
@@ -10,4 +10,3 @@ export default function WhatsAppFloat() {
     </Link>
   );
 }
-

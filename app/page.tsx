@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { coOps, coupons, featuredLocations, trucksForSale } from '@/lib/data';
 
 const ctas = [
@@ -151,4 +151,3 @@ export default function Home() {
     </main>
   );
 }
-

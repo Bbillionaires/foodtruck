@@ -1,4 +1,20 @@
 import type { Metadata } from 'next';
-export const metadata: Metadata = { title:'Book a Spot / Scheduler | Jacksonville Food Truck Network', description:'Calendar booking for temporary vendor access opportunities in Jacksonville.'};
+import BookingFlow from '@/components/BookingFlow';
 
-export default function Page(){return <main className="container-page"><h1 className="text-2xl font-bold mb-4">Book a Spot / Scheduler</h1><form className="card grid gap-3 md:grid-cols-2"><input className="rounded border p-2" placeholder="Business name"/><input className="rounded border p-2" placeholder="Owner name"/><input className="rounded border p-2" placeholder="Date"/><select className="rounded border p-2"><option>Daily</option><option>Weekly</option><option>Event-based</option></select><input className="rounded border p-2" placeholder="Vendor type"/><input className="rounded border p-2" placeholder="Promo code"/><label className="text-sm">Insurance upload<input type="file" className="block"/></label><label className="text-sm">Permit/license upload<input type="file" className="block"/></label><label className="md:col-span-2"><input type="checkbox"/> I accept temporary access disclaimer, rules, refund/cancellation policy, and admin approval terms.</label><button className="btn md:col-span-2">Continue to Payment (Stripe-ready)</button></form></main>}
+export const metadata: Metadata = {
+  title: 'Book, Rent, or Buy | Jacksonville Food Truck Network',
+  description: 'Choose the right booking path to reserve vendor locations, rent food trucks, or buy food trucks in Jacksonville FL.'
+};
+
+export default function Page() {
+  return (
+    <main className="container-page space-y-8">
+      <section className="space-y-4">
+        <span className="badge">Booking flow</span>
+        <h1 className="text-4xl font-black tracking-tight">Book a location, rent a truck, or buy a truck</h1>
+        <p className="max-w-3xl text-lg leading-8 text-slate-700">Choose the correct path first. Stripe-ready payment and final confirmation happen after the request type, dates, availability, and admin approval requirements are reviewed.</p>
+      </section>
+      <BookingFlow />
+    </main>
+  );
+}

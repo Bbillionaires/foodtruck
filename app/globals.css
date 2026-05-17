@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -43,4 +43,3 @@ textarea {
 .section-title {
   @apply text-2xl font-black tracking-tight text-slate-950 md:text-3xl;
 }
-

@@ -1,7 +1,8 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 
 const nav = [
   ['Locations', '/locations'],
+  ['Match Me', '/match-location'],
   ['Book', '/book'],
   ['Training', '/training'],
   ['Financing', '/financing'],
@@ -41,4 +42,3 @@ export default function Header() {
     </header>
   );
 }
-

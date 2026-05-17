@@ -1,4 +1,4 @@
-﻿export default function PageSection({ title, children }: { title: string; children: React.ReactNode }) {
+export default function PageSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="card space-y-3">
       <span className="badge">Jacksonville support</span>
@@ -7,4 +7,3 @@
     </section>
   );
 }
-

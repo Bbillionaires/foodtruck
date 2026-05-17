@@ -1,4 +1,4 @@
-﻿import { submitInterest } from '@/lib/actions';
+import { submitInterest } from '@/lib/actions';
 
 type Field = { name: string; label: string; type?: string; options?: string[] };
 
@@ -26,4 +26,3 @@ export default function LeadForm({ table, fields, submitLabel = 'Submit' }: { ta
     </form>
   );
 }
-

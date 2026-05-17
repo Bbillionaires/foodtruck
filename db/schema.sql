@@ -18,3 +18,8 @@ create table financing_submissions (like generic_submissions including all);
 create table management_submissions (like generic_submissions including all);
 create table licensing_submissions (like generic_submissions including all);
 create table notifications_queue (id bigserial primary key, channel text, recipient text, payload jsonb, status text default 'queued', created_at timestamptz default now());
+create table advertising_submissions (like generic_submissions including all);
+create table location_match_submissions (like generic_submissions including all);
+create table booking_submissions (like generic_submissions including all);
+create table truck_rental_submissions (like generic_submissions including all);
+create table truck_sale_submissions (like generic_submissions including all);

@@ -8,7 +8,12 @@ const allowedSubmissionTables = new Set([
   'grease_submissions',
   'financing_submissions',
   'management_submissions',
-  'licensing_submissions'
+  'licensing_submissions',
+  'advertising_submissions',
+  'location_match_submissions',
+  'booking_submissions',
+  'truck_rental_submissions',
+  'truck_sale_submissions'
 ]);
 
 function serializeFormData(formData: FormData) {
