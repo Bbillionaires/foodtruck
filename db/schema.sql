@@ -23,3 +23,4 @@ create table location_match_submissions (like generic_submissions including all)
 create table booking_submissions (like generic_submissions including all);
 create table truck_rental_submissions (like generic_submissions including all);
 create table truck_sale_submissions (like generic_submissions including all);
+create table account_registration_submissions (like generic_submissions including all);

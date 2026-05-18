@@ -13,7 +13,8 @@ const allowedSubmissionTables = new Set([
   'location_match_submissions',
   'booking_submissions',
   'truck_rental_submissions',
-  'truck_sale_submissions'
+  'truck_sale_submissions',
+  'account_registration_submissions'
 ]);
 
 function serializeFormData(formData: FormData) {
@@ -55,3 +56,4 @@ export async function submitInterest(formData: FormData): Promise<void> {
 
   revalidatePath('/admin');
 }
+
